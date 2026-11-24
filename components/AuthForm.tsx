@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
 
 const inputClass =
-  "w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none";
+  "w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100";
 
 export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const router = useRouter();
@@ -53,7 +53,18 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-md flex-col justify-center px-6 py-16">
-      <h1 className="text-2xl font-bold">{mode === "login" ? "Log in" : "Create an account"}</h1>
+      <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+        <span
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white"
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+        </span>
+        <h1 className="mt-4 text-2xl font-bold tracking-tight">
+          {mode === "login" ? "Log in" : "Create an account"}
+        </h1>
       <p className="mt-2 text-sm text-zinc-600">
         {mode === "login"
           ? "Welcome back — your applications are waiting."
@@ -98,7 +109,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         <button
           type="submit"
           disabled={busy}
-          className="w-full rounded-md bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-zinc-700 disabled:opacity-50"
+          className="w-full rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
         >
           {busy ? "Please wait…" : mode === "login" ? "Log in" : "Create account"}
         </button>
@@ -107,15 +118,16 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
       <p className="mt-6 text-sm text-zinc-600">
         {mode === "login" ? (
           <>
-            No account yet? <Link href="/signup" className="underline">Create one</Link>.
+            No account yet? <Link href="/signup" className="font-medium text-indigo-600 underline hover:text-indigo-800">Create one</Link>.
           </>
         ) : (
           <>
-            Already have an account? <Link href="/login" className="underline">Log in</Link>.
+            Already have an account? <Link href="/login" className="font-medium text-indigo-600 underline hover:text-indigo-800">Log in</Link>.
           </>
         )}{" "}
-        <Link href="/" className="underline">Back home</Link>
+        <Link href="/" className="font-medium text-indigo-600 underline hover:text-indigo-800">Back home</Link>
       </p>
+      </div>
     </main>
   );
 }

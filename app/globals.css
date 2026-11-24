@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 body {
-  background: #fafafa;
+  background: #f8fafc;
   color: #18181b;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #e0e7ff;
 }

@@ -31,9 +31,19 @@ export default async function DashboardPage() {
   return (
     <main className="mx-auto w-full max-w-5xl px-6 py-10">
       <header className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold">Your applications</h1>
-          <p className="mt-1 text-sm text-zinc-600">Signed in as {data.user.email}</p>
+        <div className="flex items-start gap-3">
+          <span
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+          </span>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Your applications</h1>
+            <p className="mt-1 text-sm text-zinc-600">Signed in as {data.user.email}</p>
+          </div>
         </div>
         <LogoutButton />
       </header>

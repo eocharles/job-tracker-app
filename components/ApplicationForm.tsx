@@ -5,7 +5,7 @@ import { STATUSES, WORK_TYPES, type Application } from "@/lib/types";
 import { createApplication, updateApplication } from "@/app/dashboard/actions";
 
 const inputClass =
-  "w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none";
+  "w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100";
 const labelClass = "block text-sm font-medium";
 
 function Field({
@@ -73,7 +73,7 @@ export default function ApplicationForm({
       action={handleSubmit}
       className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm"
     >
-      <h2 className="text-lg font-semibold">
+      <h2 className="border-l-4 border-indigo-600 pl-3 text-lg font-semibold">
         {application ? "Edit application" : "Add an application"}
       </h2>
       {error && <p className="mt-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
@@ -122,7 +122,7 @@ export default function ApplicationForm({
         <button
           type="submit"
           disabled={busy}
-          className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 disabled:opacity-50"
+          className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
         >
           {busy ? "Saving…" : application ? "Save changes" : "Add application"}
         </button>
