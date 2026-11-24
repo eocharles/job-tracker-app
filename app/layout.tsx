@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Job Application Tracker",
+  title: "JobTrail",
   description:
     "Track every job application — company, role, status, next step and follow-ups — in one place.",
 };

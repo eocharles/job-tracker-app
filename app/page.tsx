@@ -46,7 +46,7 @@ export default async function Home() {
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-2.5 font-semibold tracking-tight">
             <BrandMark />
-            Job Application Tracker
+            JobTrail
           </Link>
           <nav className="flex items-center gap-2">
             {signedIn ? (
@@ -145,7 +145,7 @@ export default async function Home() {
 
       {/* Footer */}
       <footer className="bg-indigo-950 py-6 text-center text-sm text-indigo-300">
-        Job Application Tracker — built for the job hunt.
+        JobTrail — built for the job hunt.
       </footer>
     </div>
   );

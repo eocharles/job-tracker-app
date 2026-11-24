@@ -1,4 +1,4 @@
-# Job Application Tracker
+# JobTrail
 
 A multi-user web app for tracking job applications. Each person signs up with
 their own account and only ever sees their own applications.
